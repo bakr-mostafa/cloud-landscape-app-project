@@ -11,18 +11,16 @@ This repository contains  an Azure Resource Manager (ARM) template designed to c
 - Contains all resources deployed for the application project.
 
 ### Virtual Network (VNet1)
-- Contains:
-  - Subnet1
-  - VM-jumper-01: A VM that acts as a jumper to access the web server VMs using RDP. The VM-jumper-01 is accessed only via Azure Bastion.
+- Subnet1
+- VM-jumper-01: A VM that acts as a jumper to access the web server VMs using RDP. The VM-jumper-01 is accessed only via Azure Bastion.
 
 ### Virtual Network (VNet2)
-- Contains:
-  - BackSub: Subnet containing the web server VMs. Can access storage using Service Endpoint only.
-  - AzureFirewallSubnet: Subnet containing the Azure Firewall associated with VNet2.
-  - GatewaySubnet: Subnet used to connect with Windows Admin Center (WAC).
-  - VM-web-01, VM-web-02: Web server VMs hosting Internet Information Services (IIS) web servers.
-  - Load Balancer: Distributes inbound traffic from the internet after being filtered by Azure Firewall. Ensures business continuity by distributing traffic among the two web servers.
-  - Azure Firewall: Filters traffic coming from the internet, forwards it to the load balancer, and restricts access to web servers to specific domains.
+- BackSub: Subnet containing the web server VMs. Can access storage using Service Endpoint only.
+- AzureFirewallSubnet: Subnet containing the Azure Firewall associated with VNet2.
+- GatewaySubnet: Subnet used to connect with Windows Admin Center (WAC).
+- VM-web-01, VM-web-02: Web server VMs hosting Internet Information Services (IIS) web servers.
+- Load Balancer: Distributes inbound traffic from the internet after being filtered by Azure Firewall. Ensures business continuity by distributing traffic among the two web servers.
+- Azure Firewall: Filters traffic coming from the internet, forwards it to the load balancer, and restricts access to web servers to specific domains.
 
 ### Storage and File Share
 - Utilizes Azure Storage for file storage needs.
